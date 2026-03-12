@@ -1,0 +1,25 @@
+{
+  "name": "cleiton-blade",
+  "version": "1.0.0",
+  "description": "Cleiton Blade System - Monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "validate-ports": "node validate-ports.js",
+    "validate:supabase": "node apps/api/validate-supabase.js",
+    "dev": "npm run validate-ports && turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "test": "turbo run test",
+    "dev:web": "npm run validate-ports && turbo run dev --filter=web",
+    "dev:api": "npm run validate-ports && turbo run dev --filter=api",
+    "dev:all": "npm run dev"
+  },
+  "devDependencies": {
+    "turbo": "^1.13.0"
+  }
+}
